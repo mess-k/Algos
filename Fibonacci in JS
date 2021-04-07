@@ -1,0 +1,17 @@
+function fibonacci(fib) {
+    var fN = 0
+    var sN = 1
+    if (fib === 0) {
+        return fN
+    }
+    if (fib === 1) {
+        return sN
+    }
+    for (let i = 2; i <= fib; i++) {
+        var final = sN + fN
+        fN = sN
+        sN = final
+    }
+    return final
+}
+console.log(fibonacci(15))
