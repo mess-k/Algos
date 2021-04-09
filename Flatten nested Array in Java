@@ -1,0 +1,20 @@
+import java.util.ArrayList;
+
+public class * {
+    static ArrayList<Integer> flatten(int[][] unFlat){
+        ArrayList<Integer> newArr = new ArrayList<Integer>();
+        for(int i=0; i < unFlat.length; i++){
+            for(int j=0; j< unFlat[i].length;j++){
+            newArr.add(unFlat[i][j]);
+        }
+    }
+        return newArr;
+}
+    public static void main(String[]args){
+        int [][] newUnFlat = {
+                        {2,5,8},
+                        {3,6,1},
+                        {5,7,7}};
+        System.out.println(flatten(newUnFlat));
+                    }
+}
