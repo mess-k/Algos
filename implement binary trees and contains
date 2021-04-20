@@ -1,0 +1,66 @@
+class Node{
+    constructor(value){
+        this.value= value;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+class BST{
+    constructor(){
+        this.root = null
+    }
+
+    add(value){
+        const NN = new Node(value);
+        if (this.root == null) {
+            this.root = NN;
+            return this;
+        }
+        let TR = this.root;
+        while((value < TR.value && TR.left != null) || (value > TR.value && TR.right != null)){
+            if(value > TR.value && TR.right != null){
+                TR = TR.right;
+            }
+            if(value < TR.value && TR.left != null){
+                TR = TR.left;
+            }    
+        }
+        if(value < TR.value){ 
+            TR.left = NN;
+        }
+        if(value > TR.value){
+            TR.right = NN;
+        }
+        if(TR.value == value){
+        return null
+        }
+        return this;
+    }
+
+
+    contains(value) {
+        let checker = this.root
+        if(checker == null){
+            return false;
+        }
+        while (checker) {
+            if (value === checker.value) {
+                console.log("yeah buddy")
+                return true;
+            }
+            checker = value < checker.value ? checker.left : checker.right;
+        }
+        console.log("try again")
+        return false;
+    }
+};
+
+bst1 = new BST()
+bst1.add(50)
+bst1.add(3)
+bst1.add(40)
+bst1.add(12)
+bst1.add(333)
+bst1.add(66)
+bst1.contains(10)
